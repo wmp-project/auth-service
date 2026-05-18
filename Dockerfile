@@ -6,7 +6,6 @@ RUN         go mod tidy && CGO_ENABLED=0 go build -o auth-service ./cmd/server
 FROM        sonarsource/sonar-scanner-cli AS sonar-scanner
 WORKDIR     /usr/src
 COPY        --from=builder /app /usr/src
-# Use a dummy file to flag a successful scan
 RUN         sonar-scanner \
             -Dsonar.host.url=http://172.31.17.79:9000 \
             -Dsonar.login=admin -Dsonar.password=admin123 -Dsonar.qualitygate.wait=true \

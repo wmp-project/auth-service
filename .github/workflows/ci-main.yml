@@ -7,6 +7,6 @@ on:
 
 jobs:
   cicd:
-    uses: raghudevopsb88/github-reusable-workflows/.github/workflows/cicd-m.yml@main
+    uses: wmp-project/github-reusable-workflows/.github/workflows/cicd-m.yml@main
 
 

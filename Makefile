@@ -1,9 +1,9 @@
 docker-build:
 	git pull
-	aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 739561048503.dkr.ecr.us-east-1.amazonaws.com
-	docker build -t 739561048503.dkr.ecr.us-east-1.amazonaws.com/auth-service:$(image_tag) .
-	trivy image 739561048503.dkr.ecr.us-east-1.amazonaws.com/auth-service:$(image_tag) -s CRITICAL,HIGH --ignore-unfixed
-	docker push 739561048503.dkr.ecr.us-east-1.amazonaws.com/auth-service:$(image_tag)
+	aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 349558942960.dkr.ecr.us-east-1.amazonaws.com
+	docker build -t 349558942960.dkr.ecr.us-east-1.amazonaws.com/auth-service:$(image_tag) .
+	trivy image 349558942960.dkr.ecr.us-east-1.amazonaws.com/auth-service:$(image_tag) -s CRITICAL,HIGH --ignore-unfixed
+	docker push 349558942960.dkr.ecr.us-east-1.amazonaws.com/auth-service:$(image_tag)
 
 eks-deploy:
 	aws eks update-kubeconfig --name dev

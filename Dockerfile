@@ -13,7 +13,6 @@ RUN         go mod tidy && CGO_ENABLED=0 go build -o auth-service ./cmd/server
 #            -Dsonar.sources=. && \
 #            touch /tmp/scan-success
 
-
 FROM        docker.io/redhat/ubi9
 #COPY        --from=sonar-scanner /tmp/scan-success /tmp/
 COPY        --from=builder  /app/auth-service .
